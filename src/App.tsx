@@ -22,17 +22,17 @@ function App() {
     // </div>
     <div className="container">
       <div className="components">
-        {/* <div class="switch">
-      <div class="switch__1">
-        <input id="switch-1" type="checkbox">
-        <label for="switch-1"></label>
-      </div>
-      
-      <div class="switch__2">
-        <input id="switch-2" type="checkbox" checked>
-        <label for="switch-2"></label>
-      </div>
-    </div> */}
+        <div className="switch">
+          <div className="switch__1">
+            <input id="switch-1" type="checkbox" />
+            <label htmlFor="switch-1"></label>
+          </div>
+
+          <div className="switch__2">
+            <input id="switch-2" type="checkbox" defaultChecked />
+            <label htmlFor="switch-2"></label>
+          </div>
+        </div>
 
         <div className="checkbox">
           <div className="checkbox__1">
