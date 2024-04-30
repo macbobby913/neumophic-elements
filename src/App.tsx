@@ -49,17 +49,23 @@ function App() {
           </div>
         </div>
 
-        {/* <div class="radio">
-      <div class="radio__1">
-        <input id="radio-1" type="radio"  name="radio" value="1">
-        <label for="radio-1"></label>
-      </div>
-      
-      <div class="radio__2">
-        <input id="radio-2" type="radio" name="radio" value="2" checked>
-        <label for="radio-2"></label>
-      </div>
-    </div> */}
+        <div className="radio">
+          <div className="radio__1">
+            <input id="radio-1" type="radio" name="radio" value="1" />
+            <label htmlFor="radio-1"></label>
+          </div>
+
+          <div className="radio__2">
+            <input
+              id="radio-2"
+              type="radio"
+              name="radio"
+              value="2"
+              defaultChecked
+            />
+            <label htmlFor="radio-2"></label>
+          </div>
+        </div>
 
         {/* <div class="btn btn__primary"><p>Button</p></div>
     <div class="btn btn__secondary"><p>Button</p></div> */}
