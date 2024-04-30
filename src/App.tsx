@@ -42,7 +42,7 @@ function App() {
             </label>
           </div>
           <div className="checkbox__2">
-            <input id="checkbox-2" type="checkbox" checked />
+            <input id="checkbox-2" type="checkbox" defaultChecked />
             <label htmlFor="checkbox-2">
               <i className="material-icons">done</i>
             </label>
