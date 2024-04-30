@@ -1,25 +1,31 @@
-import React from "react";
-import logo from "./logo.svg";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
+  // for clock
+  const [h, setH] = useState<number>(0);
+  const [m, setM] = useState<number>(0);
+  const [s, setS] = useState<number>(0);
+  useEffect(() => {
+    var intervalID = setInterval(() => {
+      const today = new Date();
+      const h = (today.getHours() % 12) + today.getMinutes() / 59; // 22 % 12 = 10pm
+      const hAngle = h * 30; // 12 * 30 = 360deg
+      const m = today.getMinutes(); // 0 - 59
+      const mAngle = m * 6;
+      const s = today.getSeconds(); // 0 - 59
+      const sAngle = s * 6; // 60 * 6 = 360deg
+
+      setH(hAngle);
+      setM(mAngle);
+      setS(sAngle);
+    }, 500);
+
+    return () => {
+      clearInterval(intervalID);
+    };
+  }, []);
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.tsx</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
     <div className="container">
       <div className="components">
         <div className="switch">
@@ -74,18 +80,27 @@ function App() {
           <p>Button</p>
         </div>
 
-        {/* <div class="clock">
-      <div class="hand hours"></div>
-      <div class="hand minutes"></div>
-      <div class="hand seconds"></div>
-      <div class="point"></div>
-      <div class="marker">
-        <span class="marker__1"></span>
-        <span class="marker__2"></span>
-        <span class="marker__3"></span>
-        <span class="marker__4"></span>
-      </div>
-    </div> */}
+        <div className="clock">
+          <div
+            className="hand hours"
+            style={{ transform: `rotate(${h}deg)` }}
+          ></div>
+          <div
+            className="hand minutes"
+            style={{ transform: `rotate(${m}deg)` }}
+          ></div>
+          <div
+            className="hand seconds"
+            style={{ transform: `rotate(${s}deg)` }}
+          ></div>
+          <div className="point"></div>
+          <div className="marker">
+            <span className="marker__1"></span>
+            <span className="marker__2"></span>
+            <span className="marker__3"></span>
+            <span className="marker__4"></span>
+          </div>
+        </div>
 
         {/* <div class="chip">
       <div class="chip__icon">
