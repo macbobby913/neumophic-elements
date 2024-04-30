@@ -67,8 +67,12 @@ function App() {
           </div>
         </div>
 
-        {/* <div class="btn btn__primary"><p>Button</p></div>
-    <div class="btn btn__secondary"><p>Button</p></div> */}
+        <div className="btn btn__primary">
+          <p>Button</p>
+        </div>
+        <div className="btn btn__secondary">
+          <p>Button</p>
+        </div>
 
         {/* <div class="clock">
       <div class="hand hours"></div>
