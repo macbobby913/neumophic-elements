@@ -175,14 +175,17 @@ function App() {
           <div className="segmented-control__color"></div>
         </div>
 
-        {/* <div class="icon">
-      <div class="icon__home">
-        <ion-icon name="home"></ion-icon></div>
-      <div class="icon__account">
-        <ion-icon name="person"></ion-icon></div>
-      <div class="icon__settings">
-        <ion-icon name="settings"></ion-icon></div>
-    </div> */}
+        <div className="icon">
+          <div className="icon__home">
+            <i className="material-icons">home</i>
+          </div>
+          <div className="icon__account">
+            <i className="material-icons">person</i>
+          </div>
+          <div className="icon__settings">
+            <i className="material-icons">settings</i>
+          </div>
+        </div>
 
         {/* <div class="slider">
       <div class="slider__box">

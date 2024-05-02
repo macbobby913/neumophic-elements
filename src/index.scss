@@ -659,6 +659,9 @@ html {
   grid-row: 4 / 5;
   display: flex;
   justify-content: space-between;
+  i {
+    font-size: 28px;
+  }
   &__account,
   &__home,
   &__settings {
