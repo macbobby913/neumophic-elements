@@ -102,14 +102,15 @@ function App() {
           </div>
         </div>
 
-        {/* <div class="chip">
-      <div class="chip__icon">
-        <ion-icon name="color-palette"></ion-icon></div>
-      <p>Neumorphic Design</p>
-      <div class="chip__close">
-        <ion-icon name="close"></ion-icon>
-      </div>
-    </div> */}
+        <div className="chip">
+          <div className="chip__icon">
+            <i className="material-icons">palette</i>
+          </div>
+          <p>Neumorphic Design</p>
+          <div className="chip__close">
+            <i className="material-icons">close</i>
+          </div>
+        </div>
 
         {/* <div class="circle">
       <span class="circle__btn">
