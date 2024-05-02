@@ -131,9 +131,9 @@ function App() {
           <span className={`circle__back-2 ${toggle ? "paused" : ""}`}></span>
         </div>
 
-        {/* <div class="form">
-      <input type="text" class="form__input" placeholder="Type anything...">
-    </div> */}
+        <div className="form">
+      <input type="text" className="form__input" placeholder="Type anything..."/>
+    </div>
 
         {/* <div class="search">
       <input type="text" class="search__input" placeholder="Search...">
