@@ -132,15 +132,23 @@ function App() {
         </div>
 
         <div className="form">
-      <input type="text" className="form__input" placeholder="Type anything..."/>
-    </div>
+          <input
+            type="text"
+            className="form__input"
+            placeholder="Type anything..."
+          />
+        </div>
 
-        {/* <div class="search">
-      <input type="text" class="search__input" placeholder="Search...">
-      <div class="search__icon">
-        <ion-icon name="search"></ion-icon>
-      </div>
-    </div> */}
+        <div className="search">
+          <input
+            type="text"
+            className="search__input"
+            placeholder="Search..."
+          />
+          <div className="search__icon">
+            <i className="material-icons">search</i>
+          </div>
+        </div>
 
         {/* <div class="segmented-control">
       
