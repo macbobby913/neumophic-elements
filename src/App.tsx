@@ -25,6 +25,9 @@ function App() {
       clearInterval(intervalID);
     };
   }, []);
+
+  // for wave circle
+  const [toggle, setToggle] = useState(false);
   return (
     <div className="container">
       <div className="components">
@@ -112,14 +115,21 @@ function App() {
           </div>
         </div>
 
-        {/* <div class="circle">
-      <span class="circle__btn">
-        <ion-icon class="pause" name="pause"></ion-icon>
-        <ion-icon class="play" name="play"></ion-icon>
-      </span>
-      <span class="circle__back-1"></span>
-      <span class="circle__back-2"></span>
-    </div> */}
+        <div className="circle">
+          <span
+            className={`circle__btn ${toggle ? "shadow" : ""}`}
+            onClick={() => setToggle(!toggle)}
+          >
+            <i className={`material-icons pause ${toggle ? "visibility" : ""}`}>
+              pause
+            </i>
+            <i className={`material-icons play ${toggle ? "visibility" : ""}`}>
+              play_arrow
+            </i>
+          </span>
+          <span className={`circle__back-1 ${toggle ? "paused" : ""}`}></span>
+          <span className={`circle__back-2 ${toggle ? "paused" : ""}`}></span>
+        </div>
 
         {/* <div class="form">
       <input type="text" class="form__input" placeholder="Type anything...">

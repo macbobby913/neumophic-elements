@@ -453,7 +453,6 @@ html {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    font-size: 3.2rem;
     color: var(--primary);
     z-index: 300;
     background: var(--greyLight-1);
@@ -468,6 +467,7 @@ html {
       position: absolute;
       opacity: 0;
       transition: all 0.2s linear;
+      font-size: 35px;
       &.visibility {
         opacity: 1;
       }
@@ -475,6 +475,7 @@ html {
     .pause {
       position: absolute;
       transition: all 0.2s linear;
+      font-size: 35px;
       &.visibility {
         opacity: 0;
       }
