@@ -177,9 +177,7 @@ function App() {
             <i className="material-icons">palette</i>
           </div>
           <p>Neumorphic Design</p>
-          <div className="chip__close">
-            <i className="material-icons">close</i>
-          </div>
+          <i className="material-icons chip__close">close</i>
         </div>
 
         <div className="circle">

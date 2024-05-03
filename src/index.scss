@@ -142,6 +142,7 @@ html {
   display: grid;
   grid-template-columns: repeat(2, 6rem);
   grid-gap: 3rem;
+  justify-content: center;
   input {
     display: none;
   }
@@ -149,6 +150,8 @@ html {
   &__1,
   &__2 {
     width: 6rem;
+    display: flex;
+    justify-content: center;
     label {
       box-shadow: $shadow;
       cursor: pointer;
