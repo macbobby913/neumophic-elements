@@ -270,6 +270,7 @@ function App() {
         >
           ref :
         </a>
+        <h1 className="text-3xl font-bold underline text-teal-500">text with tailwind classes!</h1>
       </div>
     </div>
   );
