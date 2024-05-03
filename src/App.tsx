@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
 
 function App() {
@@ -28,6 +28,73 @@ function App() {
 
   // for wave circle
   const [toggle, setToggle] = useState(false);
+
+  // for slider
+  const sliderBoxRef = useRef<HTMLDivElement>(null);
+  const sliderBtnRef = useRef<HTMLSpanElement>(null);
+  const sliderColorRef = useRef<HTMLSpanElement>(null);
+  const sliderTooltipRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const box = sliderBoxRef.current;
+    const btn = sliderBtnRef.current;
+    const color = sliderColorRef.current;
+    const tooltip = sliderTooltipRef.current;
+    if (!box || !btn || !color || !tooltip) return;
+
+    const updateUi = (e: MouseEvent) => {
+      e.preventDefault();
+      let targetRect = box.getBoundingClientRect();
+      let x = e.pageX - targetRect.left + 10;
+      if (x > targetRect.width) {
+        x = targetRect.width;
+      }
+      if (x < 0) {
+        x = 0;
+      }
+      btn.style.left = x - 10 + "px";
+
+      // get the position of the button inside the container (%)
+      let percentPosition = (x / targetRect.width) * 100;
+
+      // color width = position of button (%)
+      color.style.width = percentPosition + "%";
+
+      // move the tooltip when button moves, and show the tooltip
+      tooltip.style.left = x - 13 + "px";
+      tooltip.style.opacity = "1";
+
+      // show the percentage in the tooltip
+      tooltip.textContent = Math.round(percentPosition) + "%";
+    };
+
+    const onMouseUp = (e: MouseEvent) => {
+      window.removeEventListener("mousemove", updateUi);
+      tooltip.style.opacity = "0";
+
+      btn.addEventListener("mouseover", function () {
+        tooltip.style.opacity = "1";
+      });
+
+      btn.addEventListener("mouseout", function () {
+        tooltip.style.opacity = "0";
+      });
+    };
+
+    box.addEventListener("mousedown", (e) => {
+      updateUi(e);
+      window.addEventListener("mousemove", updateUi);
+      window.addEventListener("mouseup", onMouseUp);
+    });
+    return () => {
+      box.removeEventListener("mousedown", () => {});
+      box.removeEventListener("mouseover", () => {});
+      box.removeEventListener("mouseout", () => {});
+      window.removeEventListener("mousemove", () => {});
+      window.removeEventListener("mouseup", () => {});
+    };
+  }, [sliderBoxRef, sliderBtnRef, sliderColorRef, sliderTooltipRef]);
+
   return (
     <div className="container">
       <div className="components">
@@ -187,15 +254,16 @@ function App() {
           </div>
         </div>
 
-        {/* <div class="slider">
-      <div class="slider__box">
-        <span class="slider__btn" id="find"></span>
-        <span class="slider__color"></span>
-        <span class="slider__tooltip">50%</span>
+        <div className="slider">
+          <div className="slider__box" ref={sliderBoxRef}>
+            <span className="slider__btn" id="find" ref={sliderBtnRef}></span>
+            <span className="slider__color" ref={sliderColorRef}></span>
+            <span className="slider__tooltip" ref={sliderTooltipRef}>
+              50%
+            </span>
+          </div>
+        </div>
       </div>
-    </div> */}
-      </div>
-      {/* <a href="https://dribbble.com/myacode" class="dribbble" target="_blank"><ion-icon name="logo-dribbble"></ion-icon></a> */}
     </div>
   );
 }
