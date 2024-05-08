@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "ComicNeue";
+    font-style: bold;
+    font-weight: 700;
+    src: url(../public/fonts/ComicNeue-Bold.ttf);
+  }
+}
+
 :root {
   --primary-light: #8abdff;
   --primary: #6d5dfc;
@@ -11,7 +20,7 @@
   --greyLight-1: #e4ebf5;
   --greyLight-2: #c8d0e7;
   --greyLight-3: #bec8e4;
-  --greyDark: #9baacf;
+  --greyDark: #91a4d3;
 }
 
 *,
@@ -32,4 +41,3 @@ html {
     font-size: 75%;
   }
 }
-
