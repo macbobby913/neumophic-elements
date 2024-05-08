@@ -2,7 +2,7 @@ import MenuTop from "./MenuTop";
 
 function Home() {
   return (
-    <section className="flex gap-4 h-screen">
+    <section className="flex gap-4 h-screen p-4">
       <div className="w-[400px] h-full flex flex-col gap-4">
         <MenuTop />
         <div className="h-full shadow-neumorphicOuter rounded-xl">
